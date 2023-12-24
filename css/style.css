@@ -39,6 +39,7 @@
     --mainColor: #9747FF;
     --overlayGradient : linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);;
     --lightgrey: #f6f6f6;
+    --grey: #dddddd;
     --titleColor: #000000;
     --textColor: #272727;
     --fontFamily: "Poppins", Arial, sans-serif;
@@ -47,7 +48,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 html, body {
@@ -100,6 +101,14 @@ body {
     padding: 0 5%;
 }
 
+.container-lg > .row {
+    margin-bottom: 3rem;
+}
+
+.container-lg > .row:last-child {
+    margin-bottom: 0 !important;
+}
+
 /*******************************************************************************************************************************/
 /*****Basics********************************************************************************************************************/
 /*******************************************************************************************************************************/
@@ -120,7 +129,7 @@ h1 {
 h3 {
     font-family: var(--fontFamily);
     color: var(--titleColor);
-    font-size: 3.8rem;
+    font-size: 3rem;
     font-weight: 800;
     position: relative;
     margin-bottom: 3rem;
@@ -140,6 +149,11 @@ h3 span {
     font-weight: 400;
 }
 
+h4 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
 strong {
     font-weight: 600;
 }
@@ -153,7 +167,14 @@ a {
     color: inherit;
 }
 
-nav ul li a{
+img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+nav ul li a, btn {
     transition: all 250ms ease-in-out;
     -moz-transition: all 250ms ease-in-out;
     -webkit-transition: all 250ms ease-in-out;
@@ -291,7 +312,7 @@ section {
     padding: 6rem 0;
 }
 
-section.lightgrey-background {
+.lightgrey-background {
     background: var(--lightgrey);
 }
 
@@ -299,7 +320,46 @@ section.lightgrey-background {
 /*****Elements******************************************************************************************************************/
 /*******************************************************************************************************************************/
 
+/* Buttons */
 
+.btn {
+    border-radius: 0;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.btn-a {
+    color: #ffffff;
+    background: var(--mainColor);
+}
+
+.btn-a:hover {
+    color: #ffffff;
+    background: var(--textColor);
+}
+
+
+/* Teaser */
+
+.card {
+    border: none;
+}
+
+.teaser {
+    display: flex;
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--grey);
+}
+
+.teaser .card-image {
+    padding-top: calc(100% / 3 * 2);
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
 
 /*******************************************************************************************************************************/
 /*****Footer********************************************************************************************************************/
@@ -307,7 +367,7 @@ section.lightgrey-background {
 
 footer {
     width: 100%;
-    margin: 0 auto 4vw auto;
+    margin: 0 auto;
     padding: 6rem 0;
     font-size: 1.8rem;
     color: #ffffff;
@@ -351,10 +411,33 @@ footer .social-icons ul li a span {
 
 
 /* Smartphone Querformat */
-@media screen and (min-width: 667px) {}
+@media screen and (min-width: 667px) {
+
+    .teaser .card-image {
+        padding-top: 0;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+
+}
 
 /* Tablet Hochformat */
 @media screen and (min-width: 768px) {
+
+    .leadtext{
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .container-lg > .row {
+        margin-bottom: 5rem;
+    }
+
+    .container-lg > .row:last-child {
+        margin-bottom: 0 !important;
+    }
 
     header, section, footer {
         width: 92vw;
@@ -376,6 +459,16 @@ footer .social-icons ul li a span {
         text-align: center;
         font-size: 5.2rem;
         line-height: 6.1rem;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 3.8rem;
+    }
+
+    h3:after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .mobile-navigation {
@@ -441,6 +534,12 @@ footer .social-icons ul li a span {
 
     .banner {
         height: 60vh;
+    }
+
+    .btn {
+        border-radius: 0;
+        padding: 1.5rem 3rem;
+        font-size: 1.5rem;
     }
 
 }
