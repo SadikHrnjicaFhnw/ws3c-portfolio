@@ -343,9 +343,9 @@ section {
 
 /* Teaser */
 
-.card {
+/*.card {
     border: none;
-}
+}*/
 
 .teaser {
     display: flex;
@@ -421,7 +421,10 @@ footer .social-icons ul li a span {
     }
 
 }
-
+/* Projects */
+.prject-images{
+    aspect-ratio: 1/1;
+}
 /* Tablet Hochformat */
 @media screen and (min-width: 768px) {
 
