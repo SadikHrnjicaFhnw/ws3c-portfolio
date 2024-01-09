@@ -526,7 +526,7 @@ footer .social-icons ul li a span {
 }
 /* Projects */
 .prject-images{
-    aspect-ratio: 1/1;
+    width: 100%;
 }
 /* Tablet Hochformat */
 @media screen and (min-width: 768px) {
