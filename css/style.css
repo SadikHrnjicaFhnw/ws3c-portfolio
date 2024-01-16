@@ -343,10 +343,6 @@ section {
 
 /* Teaser */
 
-/*.card {
-    border: none;
-}*/
-
 .teaser {
     display: flex;
     border-radius: 2rem;
@@ -359,6 +355,13 @@ section {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+}
+
+
+/* Progrssbar */
+
+.progress-bar{
+    background-color: var(--mainColor);
 }
 
 /*******************************************************************************************************************************/
